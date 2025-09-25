@@ -52,7 +52,6 @@ SimpleLangChain/
 ├── text-splitter.js         # Text chunking
 ├── vector-store.js          # Embeddings and vector storage
 ├── chat.js                  # RAG chat interface
-├── setup.js                 # Setup helper
 ├── test/data/               # PDF files directory
 ├── package.json
 ├── README.md
