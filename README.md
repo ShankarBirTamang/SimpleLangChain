@@ -1,6 +1,6 @@
 # LangChain Demo
 
-A simplified demonstration of essential LangChain concepts using PDF files, Gemini embeddings, and vector stores.
+A simplified demonstration of essential [LangChain](https://js.langchain.com/docs/introduction/) concepts using PDF files, Gemini embeddings, and vector stores.
 
 ## 🎯 What This Demo Shows
 
