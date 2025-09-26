@@ -25,7 +25,7 @@ export class Chat {
   async ask(question, maxResults = 3) {
     //1.RETRIEVAL: Retrieve relevant chunks from vector store
     const relevantDocs = await this.vectorStore.search(question, maxResults);
-
+    console.log("Relevant docs:", relevantDocs);
     if (relevantDocs.length === 0) {
       return "No relevant information found.";
     }
@@ -40,6 +40,7 @@ export class Chat {
       context: context,
       question: question,
     });
+    console.log("Prompt:", prompt);
 
     //4.GENERATION: Send prompt to Gemini and return response
     const response = await this.llm.invoke(prompt);

@@ -32,11 +32,12 @@ class LangChainDemo {
       const splitter = new TextSplitter({ chunkSize: 1000, chunkOverlap: 200 });
       const chunks = await splitter.splitDocuments(documents);
       console.log(`✅ Created ${chunks.length} chunks`);
+      // console.log("Chunks:", chunks[0].metadata.loc);
 
       // Create vector store
       const vectorStore = new VectorStore(this.apiKey);
       await vectorStore.addDocuments(chunks);
-
+      console.log("Vector store:", vectorStore.vectorStore.memoryVectors[0]);
       // Initialize chat
       const chat = new Chat(vectorStore, this.apiKey);
 
@@ -57,6 +58,7 @@ class LangChainDemo {
 
     const documents = await PDFLoader.loadFromDirectory(dataDir);
     console.log(`✅ Loaded ${documents.length} PDF documents`);
+    // console.log("Documents:", documents);
     return documents;
   }
 
